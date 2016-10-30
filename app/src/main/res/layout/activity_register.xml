@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.condelantal.condelantal.LoginActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="Registrarse"
+        android:id="@+id/registrarse"
+        android:textSize="25dp"
+        android:layout_marginTop="13dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="74dp" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nombre"
+        android:hint="Nombre"
+        android:focusable="true"
+        android:layout_marginTop="39dp"
+        android:layout_below="@+id/registrarse"
+        android:layout_alignStart="@+id/registrarse"
+        android:layout_alignEnd="@+id/registrarse" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/celular"
+        android:hint="Celular"
+        android:layout_below="@+id/nombre"
+        android:layout_alignStart="@+id/nombre"
+        android:layout_alignEnd="@+id/nombre" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/correo"
+        android:hint="Correo"
+        android:layout_below="@+id/celular"
+        android:layout_alignStart="@+id/celular"
+        android:layout_alignEnd="@+id/celular" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/contrasena"
+        android:hint="Contraseña"
+        android:layout_below="@+id/correo"
+        android:layout_alignStart="@+id/correo"
+        android:layout_alignEnd="@+id/correo" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aceptar"
+        android:id="@+id/Sign"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/contrasena"
+        android:layout_marginStart="39dp"
+        android:layout_marginBottom="72dp" />
+
+
+</RelativeLayout>
