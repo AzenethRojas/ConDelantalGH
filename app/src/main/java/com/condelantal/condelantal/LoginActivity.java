@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 import android.content.Intent;
+import android.view.View.OnClickListener;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -14,19 +16,21 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         Button btnSingin = (Button) findViewById(R.id.signin);
         Button btnSingup = (Button) findViewById(R.id.signup);
-        btnSingin.setOnClickListener(new View.OnClickListener() {
-            @Override
+        btnSingin.setOnClickListener(new OnClickListener()
+        {
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), SignActivity.class);
-                startActivityForResult(intent, 0);
+                Intent intent = new Intent(LoginActivity.this, SignActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
-        btnSingup.setOnClickListener(new View.OnClickListener() {
+        btnSingup.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), RegisterActivity.class);
-                startActivityForResult(intent, 0);
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
