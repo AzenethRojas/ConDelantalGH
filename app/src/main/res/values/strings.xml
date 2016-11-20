@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">ConDelantal</string>
+    <string name="app_name">Con Delantal</string>
+    <string-array name="areas">
+        <item>Adentro</item>
+        <item>Afuera</item>
+    </string-array>
+
 </resources>

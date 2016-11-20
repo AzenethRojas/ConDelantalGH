@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.condelantal.condelantal">
+    package="com.condelantal.condelantal"
+    android:name=".Cliente">
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+
     <application
+        android:name=".Cliente"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -24,9 +28,40 @@
             android:label="@string/app_name">
         </activity>
         <activity
+            android:name=".ReservationsActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
             android:name=".RegisterActivity"
             android:label="@string/app_name">
         </activity>
+        <activity
+            android:name=".ReservationActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".PrincipalActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".PedidoActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".MenuActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".DetailReservationActivity"
+            android:label="@string/app_name">
+        </activity>
+
     </application>
+    <activity android:name="com.facebook.FacebookActivity"
+        android:configChanges=
+            "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+        android:label="@string/app_name" />
+
 
 </manifest>

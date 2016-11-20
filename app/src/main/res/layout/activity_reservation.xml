@@ -1,91 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.condelantal.condelantal.LoginActivity"
     android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="25dp"
+        android:layout_below="@+id/my_toolbar"
         android:text="Reservación"
         android:id="@+id/textView"
         android:padding="20dp"
         android:gravity="center_horizontal" />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center_horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Cantidad de personas:"
+            android:layout_below="@id/textView"
             android:id="@+id/textView2"
             android:padding="30dp" />
-        <NumberPicker
-            android:layout_width="110dp"
-            android:layout_height="90dp"
-            android:id="@+id/npPersons"
-            >
-        </NumberPicker>
-    </LinearLayout>
 
-    <LinearLayout
+    <NumberPicker
+        android:layout_width="110dp"
+        android:layout_height="90dp"
+        android:id="@+id/npPersons"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hora: "
+        android:id="@+id/textView3"
+        android:padding="20dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2" />
+
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center_horizontal">
-        <EditText
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:hint="Hora"
-            android:id="@+id/txtTime"
-            android:padding="10dp" />
+        android:id="@+id/hora"
+        android:enabled="false"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Seleccione una hora."
-            android:id="@+id/btnTime"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fecha: "
+        android:id="@+id/textView4"
+        android:padding="20dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/textView3"
+        android:layout_alignEnd="@+id/textView3" />
 
-
-    </LinearLayout>
-
-    <LinearLayout
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center_horizontal">
-        <EditText
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:hint="Fecha"
-            android:id="@+id/txtDate"
-            android:padding="10dp" />
+        android:id="@+id/fecha"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4"
+        android:enabled="false"
+        />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Seleccione una fecha."
-            android:id="@+id/btnDate"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Área: "
+        android:id="@+id/textView5"
+        android:padding="20dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/textView4"
+        android:layout_toStartOf="@+id/btnHora"
+        android:layout_alignEnd="@+id/textView3" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mesa: "
+        android:id="@+id/textView6"
+        android:padding="20dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/textView5"
+        android:layout_alignEnd="@+id/textView4" />
 
 
-    </LinearLayout>
 
-    <LinearLayout
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mesas"
+        android:entries="@array/areas"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView6"></Spinner>
+
+    <ImageButton
+        android:id="@+id/btnHora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center_horizontal">
+        android:text=" "
+        android:background="@drawable/time"
+        android:onClick="showTimePickerDialog"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_alignTop="@+id/hora"
+        android:layout_toEndOf="@+id/npPersons" />
+
+    <ImageButton
+        android:id="@+id/btnFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:background="@drawable/calendar"
+        android:onClick="showDatePickerDialog"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_alignTop="@+id/fecha"
+        android:layout_alignEnd="@+id/btnHora" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Siguiente"
+        android:id="@+id/siguiente"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="42dp"
+        android:layout_toEndOf="@+id/textView6" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/areas"
+        android:id="@+id/area"
+        android:layout_alignBaseline="@+id/textView5"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView5"></Spinner>
 
 
-    </LinearLayout>
-
-
-</LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/list_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/rese"/>
+    <TextView
+        android:id="@+id/Rese"
+        android:text="Reservación: "
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/list_icon"
+        android:layout_alignBottom="@+id/list_icon"
+        android:layout_toRightOf="@+id/list_icon"/>
+    <TextView
+        android:id="@+id/numres"
+        android:text=" "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Rese"
+        android:layout_alignBottom="@+id/Rese"
+        android:layout_toRightOf="@+id/Rese"/>
+
+    <TextView
+        android:text="Fecha : "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:id="@+id/fecha"
+        android:layout_below="@+id/numres"
+        android:layout_alignLeft="@+id/Rese"
+        android:layout_alignStart="@+id/Rese" />
+    <TextView
+        android:id="@+id/fechalbl"
+        android:text=" "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fecha"
+        android:layout_alignBottom="@+id/numres"
+        android:layout_toRightOf="@+id/numres"/>
+
+    <TextView
+        android:text="Hora : "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hora"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/fecha"
+        android:layout_alignLeft="@+id/fecha"
+        android:layout_alignStart="@+id/fecha" />
+    <TextView
+        android:id="@+id/horalbl"
+        android:text=" "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/hora"
+        android:layout_alignBottom="@+id/numres"
+        android:layout_toRightOf="@+id/numres"/>
+
+    <TextView
+        android:text="Núm. personas:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/num_personas"
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/hora"
+        android:layout_alignLeft="@+id/hora"
+        android:layout_alignStart="@+id/hora" />
+    <TextView
+        android:id="@+id/personaslbl"
+        android:text="  "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/num_personas"
+        android:layout_toEndOf="@+id/num_personas" />
+
+    <TextView
+        android:text="Área :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/area"
+        android:layout_below="@+id/num_personas"
+        android:layout_alignLeft="@+id/num_personas"
+        android:layout_alignStart="@+id/num_personas"
+        android:layout_marginTop="32dp" />
+    <TextView
+        android:id="@+id/arealbl"
+        android:text=" "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/area"
+        android:layout_alignBottom="@+id/numres"
+        android:layout_toRightOf="@+id/numres"/>
+
+    <TextView
+        android:text="Mesa : "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mesa"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/area"
+        android:layout_alignLeft="@+id/area"
+        android:layout_alignStart="@+id/area" />
+    <TextView
+        android:id="@+id/mesabl"
+        android:text=" "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/mesa"
+        android:layout_alignBottom="@+id/numres"
+        android:layout_toRightOf="@+id/numres"/>
+    <TextView
+        android:text="Núm platillos :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pedido"
+        android:layout_below="@+id/mesa"
+        android:layout_alignLeft="@+id/mesa"
+        android:layout_alignStart="@+id/mesa"
+        android:layout_marginTop="37dp" />
+    <TextView
+        android:id="@+id/platilloslbl"
+        android:text=" "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/pedido"
+        android:layout_alignBottom="@+id/numres"
+        android:layout_toRightOf="@+id/numres"/>
+    <TextView
+        android:text="Subtotal $ "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/subtotal"
+        android:layout_below="@+id/pedido"
+        android:layout_alignLeft="@+id/pedido"
+        android:layout_alignStart="@+id/pedido"
+        android:layout_marginTop="37dp" />
+    <TextView
+        android:id="@+id/totallbl"
+        android:text=" "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/subtotal"
+        android:layout_alignBottom="@+id/numres"
+        android:layout_toRightOf="@+id/numres"/>
+
+
+</RelativeLayout>

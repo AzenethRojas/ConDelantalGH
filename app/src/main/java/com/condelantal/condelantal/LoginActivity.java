@@ -7,12 +7,15 @@ import android.view.View;
 import android.content.Intent;
 import android.view.View.OnClickListener;
 
+import com.facebook.FacebookSdk;
+
 
 public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_login);
         Button btnSingin = (Button) findViewById(R.id.signin);
         Button btnSingup = (Button) findViewById(R.id.signup);
@@ -21,7 +24,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, SignActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -30,7 +32,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
     }

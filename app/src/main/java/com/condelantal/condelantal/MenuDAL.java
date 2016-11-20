@@ -1,11 +1,13 @@
 package com.condelantal.condelantal;
 
 /**
- * Created by Azeneth Rojas on 29/10/2016.
+ * Created by Azeneth Rojas on 13/11/2016.
  */
-
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapPrimitive;
@@ -16,16 +18,14 @@ import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 import com.google.gson.reflect.TypeToken;
 
-public class LoginDAL {
+public class MenuDAL {
 
-    public int consultarUsuario(String nombre, String contrasena)
+    public ArrayList<Menu> consultarMenu()
     {
-        Type type= new TypeToken<String>(){}.getType();
-        String SOAP_ACTION = "ConDelantal" + "/" + "consultarUsuario";
-        SoapObject request = new SoapObject("ConDelantal", "consultarUsuario");
-        request.addProperty("nombre",nombre);
-        request.addProperty("contrasena",contrasena);
-        String respuesta = "";
+        Type typeLst = new TypeToken<ArrayList<Menu>>(){}.getType();
+        ArrayList<Menu> lstMenu = new ArrayList<Menu>();
+        String SOAP_ACTION = "ConDelantal" + "/" + "consultarMenu";
+        SoapObject request = new SoapObject("ConDelantal", "consultarMenu");
 
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 
@@ -38,14 +38,14 @@ public class LoginDAL {
 
             SoapPrimitive response = (SoapPrimitive) envelope.getResponse();
             Gson gson = new Gson();
-            respuesta = gson.fromJson(response.toString(), type);
+            lstMenu = gson.fromJson(response.toString(), typeLst);
         }
         catch(IOException | XmlPullParserException | JsonParseException ex)
         {
             ex.toString();
         }
 
-        return Integer.parseInt(respuesta);
-    }
+        return lstMenu;
 
+    }
 }
